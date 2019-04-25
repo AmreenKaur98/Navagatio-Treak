@@ -13,9 +13,15 @@ class Dashboard extends Component {
               <ProjectList />
               <ProjectList />
               </div>
-          <div className="col s12 m5 offset-m1">
-          <Notification />
-          </div>
+              <div className="col s12 m5 offset-m1">
+              <Notification />
+              <div>
+              <br /><br />
+              <button className="btn waves-effect waves-light"> ADD </button>
+              <br /><br />
+              <button className="btn waves-effect waves-light"> DELETE </button>
+              </div>
+              </div>
         </div>
       </div>
     )

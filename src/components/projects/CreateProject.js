@@ -37,15 +37,30 @@ class CreateProject extends Component {
     return(
       <div className="container">
         <form onSubmit={this.onSubmit.bind(this)} className="white">
-          <h5 className="grey-text text-darken-3"> Create New Project </h5>
+        <b>  <h5 className="grey-text text-darken-3"> Information About Place To Visit </h5> </b>
 
           <div className="input-feild">
-            <label htmlFor="title">Title </label>
+            <label htmlFor="title"> NAME OF PLACE </label>
             <input type="text" name="title" ref="name" />
           </div>
 
           <div className="input-feild">
-            <label htmlFor="content"> Content </label>
+            <label htmlFor="date"> Check-in date </label>
+            <input type="date" name="checkin" ref="arrdate" />
+          </div>
+
+          <div className="input-feild">
+            <label htmlFor="date"> Check-out date </label>
+            <input type="date" name="checkout" ref="leavedate" />
+          </div>
+
+          <div>
+            <label htmlFor="number"> Number of people </label>
+            <input type="number" name="number" ref="number" />
+          </div>
+
+          <div className="input-feild">
+            <label htmlFor="content">  Reviews </label>
             <textarea name="content" ref="content"  className="materialise-textarea">  </textarea>
           </div>
 
