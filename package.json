@@ -1,27 +1,36 @@
 {
   "name": "project",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "client": "^0.0.1",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "create-react-app": "^3.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.5",
+    "nodemon": "^1.18.11",
     "react": "^16.8.4",
     "react-datetime": "^2.16.3",
     "react-dom": "^16.8.4",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "^2.1.8"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmreenKaur98/Navagatio-Treak.git"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "author": "Amreen Kaur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmreenKaur98/Navagatio-Treak/issues"
+  },
+  "homepage": "https://github.com/AmreenKaur98/Navagatio-Treak#readme"
 }
