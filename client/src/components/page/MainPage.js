@@ -14,7 +14,7 @@ class MainPage extends Component{
         <Slider {...settings}>
           <div className="mainimg">
 <div class="row">
-<div class="col s12 m7">
+<div class="col s12 m8">
 <div class="card">
 <div class="card-image">
   <img src="img/India_tourism.jpg" />
@@ -34,7 +34,7 @@ class MainPage extends Component{
 
           <div className="mainimg">
 <div class="row">
-<div class="col s12 m7">
+<div class="col s12 m8">
 <div class="card">
 <div class="card-image">
   <img src="img/bigstock-222936619-800x360.jpg" />
@@ -55,7 +55,7 @@ class MainPage extends Component{
 
           <div className="mainimg">
 <div class="row">
-<div class="col s12 m7">
+<div class="col s12 m8">
 <div class="card">
 <div class="card-image">
   <img src="img/england-london-big-ben-river-night.jpg" />
@@ -75,7 +75,7 @@ class MainPage extends Component{
 
                     <div className="mainimg">
           <div class="row">
-          <div class="col s12 m7">
+          <div class="col s12 m8">
           <div class="card">
           <div class="card-image">
             <img src="img/About_the_Statue_Header_[Resized_826_x_300].jpg" />
@@ -94,7 +94,7 @@ class MainPage extends Component{
 
                     <div className="mainimg">
                 <div class="row">
-                <div class="col s12 m7">
+                <div class="col s12 m8">
                 <div class="card">
                 <div class="card-image">
                 <img src="img/luxury-travel.jpg" />

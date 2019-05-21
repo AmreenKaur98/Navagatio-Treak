@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import Delrow from './Delrow';
 
-  const List = props => (
+/*  const List = props => (
       <tr>
           <td>{props.cur.name_of_place}</td>
           <td>{props.cur.check_in}</td>
@@ -10,7 +11,7 @@ import axios from 'axios';
           <td>{props.cur.no_of_people}</td>
           <td>{props.cur.price}</td>
       </tr>
-  )
+  )*/
 class Dashboard extends Component {
 
   constructor(props) {
@@ -27,10 +28,10 @@ class Dashboard extends Component {
                   console.log(error);
               })
             }
-      navlist()
+      navlist(e)
       {
         return this.state.newstate.map(function(currentstate, i) {
-            return <List cur={currentstate} key={i} />;
+            return <Delrow cur={currentstate} key={i} />;
           });
       }
   render()
@@ -47,7 +48,7 @@ class Dashboard extends Component {
                 <th>PRICE</th>
             </tr>
        </thead>
-        <tbody class="z-depth-5 white-text">
+        <tbody class="z-depth-6 white-text">
              { this.navlist() }
         </tbody>
       </table>

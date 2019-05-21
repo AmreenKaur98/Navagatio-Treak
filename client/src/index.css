@@ -23,11 +23,10 @@ code {
     monospace;
 }
 .defaultcontent{
-  font-size: 100px;
-  font-style: oblique;
+  font-size: 450px;
+  font-family: cursive;
   font-weight: bold;
-  font-family: sans-serif;
-  padding: auto;
+  padding-left: 20px;
 }
 
 .mainimg{

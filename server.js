@@ -6,61 +6,47 @@ const mongoose = require('mongoose');
 const routes = express.Router();
 const PORT = 4000;
 
-let NavSchema = require('./navmodel');
+const morgan = require('morgan')
+const session = require('express-session')
+const dbConnection = require('./database')
+const MongoStore = require('connect-mongo')(session)
+const passport = require('./passport');
+const user = require('./routes/user');
+
+// MIDDLEWARE
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(cors());
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb://localhost/navagatio', { useNewUrlParser: true });
 const connection = mongoose.connection;
-
 connection.once('open', function() {
     console.log("MongoDB database connection successfully");
 })
 
-routes.route('/').get(function(req, res) {
-    NavSchema.find(function(err, obj) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.json(obj);
-        }
-    });
-});
-routes.route('/:id').get(function(req, res) {
-    let id = req.params.id;
-    NavSchema.findById(id, function(err, obj) {
-        res.json(obj);
-    });
-})
-routes.route('/add').post(function(req, res) {
-    let obj = new NavSchema(req.body);
-    obj.save()
-        .then(obj => {
-            res.status(200).json({'obj': 'obj added successfully'});
-        })
-        .catch(err => {
-            res.status(400).send('adding new obj failed');
-        });
-});
-routes.route('/update/:id').post(function(req, res) {
-    NavSchema.findById(req.params.id, function(err, obj) {
-        if (!obj)
-            res.status(404).send('data is not found');
-        else
-            obj.name_of_place = req.body.name_of_place;
+// Sessions
+app.use(
+	session({
+		secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
+		store: new MongoStore({ mongooseConnection: dbConnection }),
+		resave: false, //required
+		saveUninitialized: false //required
+	})
+)
 
-            obj.save().then(obj => {
-                res.json('obj updated');
-            })
-            .catch(err => {
-                res.status(400).send("Update not possible");
-            });
-    });
-});
+// Passport
+app.use(passport.initialize())
+app.use(passport.session()) // calls the deserializeUser
 
 
-app.use('/nav', routes);
+// Routes
+app.use('/user', user)
+
+const navroute = require('./routes/navroute');
+app.use('/nav',navroute);
+
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
