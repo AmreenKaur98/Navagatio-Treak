@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
-import { Route, Link } from 'react-router-dom'
-import SignedInLinks from './SignedInLinks';
-import SignedOutLinks from './SignedOutLinks';
+import { Link } from 'react-router-dom'
+
 import axios from 'axios';
 
 
@@ -15,8 +13,8 @@ class Navbar extends Component {
     logout(event) {
         event.preventDefault()
         console.log('logging out')
-        axios.post('http://localhost:4000/user/logout').then(response => {
-          console.log(response.data)
+        axios.post('http://localhost:4000/user/logout')
+          .then(response => { console.log(response.data)
           if (response.status === 200) {
             this.props.updateUser({
               loggedIn: false,
@@ -24,7 +22,7 @@ class Navbar extends Component {
             })
           }
         }).catch(error => {
-            console.log('Logout error')
+            console.log('Logout error from nav.js')
         })
       }
 
@@ -47,19 +45,16 @@ class Navbar extends Component {
                                 </section>
                             ) : (
                                     <section className="navbar-section">
-                                        <Link to="/login" class="waves-effect">
-                                        <span >login</span>
-    				                                </Link>
-                                        <Link to="/signup" class="waves-effect">
-                                        <span >sign up</span>
-    				                                </Link>
+                                    <span class="waves-effect"><Link to='/visitpalce'> Visited Places </Link> </span>
+                                    <span class="waves-effect"><Link to='/create'> Create </Link> </span>
+                                    <span class="waves-effect"><Link to='/about'> About </Link> </span>
+                                      <span class="waves-effect"><Link to="/login" >Login </Link></span>
+                                      <span class="waves-effect"> <Link to="/signup" > Sign Up  </Link> </span>
                                     </section>
                                 )}
               </ul>
               <ul className="right">
-                  <li class="waves-effect"><Link to='/visitpalce'> Visited Places </Link> </li>
-                  <li class="waves-effect"><Link to='/create'> Create </Link> </li>
-                  <li class="waves-effect"><Link to='/about'> About </Link> </li>
+              <li></li>
               </ul>
           </nav>
         );

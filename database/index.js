@@ -4,19 +4,15 @@ mongoose.Promise = global.Promise
 
 //your local database url
 //27017 is the default mongoDB port
-const uri = 'mongodb://localhost/navagatio' 
+const uri = 'mongodb://localhost/account'
 
 mongoose.connect(uri).then(
     () => {
-        /** ready to use. The `mongoose.connect()` promise resolves to undefined. */
-        console.log('Connected to Mongo');
-
+        console.log('Connected to Mongo account')
     },
     err => {
-         /** handle initial connection error */
-         console.log('error connecting to Mongo: ')
+         console.log('error connecting to Mongo account: ')
          console.log(err);
-
         }
   );
 

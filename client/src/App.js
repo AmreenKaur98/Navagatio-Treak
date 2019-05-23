@@ -1,11 +1,10 @@
 import React from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
-import LoginForm from './components/Login';
+import Login from './components/Login';
 import Signup from './components/Signup';
 import CreateProject from './components/projects/CreateProject';
 import DefaultPage from './components/page/DefaultPage';
@@ -60,12 +59,12 @@ render()
       <BrowserRouter>
       <div>
       <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-      {this.state.loggedIn && <p class="white"> Join the party, {this.state.username}!</p>}
+      {this.state.loggedIn && <h4 className="white-text"><center> Wow you join the party, {this.state.username}!</center></h4>}
        <Switch>
         <Route exact path='/' component={MainPage} />
         <Route path='/about' component={DefaultPage} />
         <Route path='/visitpalce' component={Dashboard} />
-        <Route path="/login" render={() => <LoginForm  updateUser={this.updateUser} />} />
+        <Route path="/login" render={() => <Login updateUser={this.updateUser} />} />
         <Route path="/signup"  render={() => <Signup/>}   />
         <Route path='/create' component={CreateProject} />
        </Switch>
