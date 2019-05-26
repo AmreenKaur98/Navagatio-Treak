@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import Slider from "react-slick";
+import { Link }  from 'react-router-dom';
 
 class MainPage extends Component{
   render(){
@@ -24,7 +25,7 @@ class MainPage extends Component{
   The majority of India is tropical and is affected by three main seasons; summer, winter and monsoon.</p>
 </div>
 <div class="card-action">
-  <a href="#">This is a link</a>
+  <Link to='/create'> Create Plan </Link>
 </div>
 </div>
 </div>
@@ -45,7 +46,7 @@ class MainPage extends Component{
    urbanised countries.</p>
 </div>
 <div class="card-action">
-  <a href="#">This is a link</a>
+  <Link to='/create'> Create Plan </Link>
 </div>
 </div>
 </div>
@@ -65,7 +66,7 @@ class MainPage extends Component{
   is home of Parliament, Big Ben and the 11th-century Tower of London.</p>
 </div>
 <div class="card-action">
-  <a href="#">This is a link</a>
+  <Link to='/create'> Create Plan </Link>
 </div>
 </div>
 </div>
@@ -85,7 +86,7 @@ class MainPage extends Component{
             a global finance and culture center, and capital Washington, DC. </p>
           </div>
           <div class="card-action">
-            <a href="#">This is a link</a>
+            <Link to='/create'> Create Plan </Link>
           </div>
           </div>
           </div>
@@ -104,7 +105,7 @@ class MainPage extends Component{
                  with or without luggage, and can be one way or round trip. </p>
                 </div>
                 <div class="card-action">
-                <a href="#">This is a link</a>
+                <Link to='/create'> Create Plan </Link>
                 </div>
                 </div>
                 </div>

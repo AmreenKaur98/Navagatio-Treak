@@ -5,7 +5,6 @@ mongoose.Promise = global.Promise
 //your local database url
 //27017 is the default mongoDB port
 const uri = 'mongodb://localhost/account'
-
 mongoose.connect(uri).then(
     () => {
         console.log('Connected to Mongo account')

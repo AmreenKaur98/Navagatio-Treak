@@ -8,9 +8,11 @@ class Delrow extends Component {
    }
 
    delete(e) {
+      e.preventDefault();
        axios.get('http://localhost:4000/nav/delete/'+this.props.cur._id)
             .then(console.log('Deleted'))
             .catch(err => console.log(err))
+
    }
   render() {
     return (

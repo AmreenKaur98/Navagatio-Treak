@@ -6,7 +6,7 @@ const SignedInLinks = () => {
     <ul className="right">
         <li class="waves-effect"><NavLink to='/signin'> Login </NavLink> </li>
         <li class="waves-effect"><NavLink to='/signup'> SignUp </NavLink> </li>
-        <li class="waves-effect"><NavLink to='/about'> About </NavLink> </li>
+        <li class=""><NavLink to='/about'> About </NavLink> </li>
     </ul>
   )
 }

@@ -39,7 +39,7 @@ class Login extends Component {
                   })
                   // update the state to redirect to home
                   this.setState({
-                      redirectTo: 'http://localhost:4000/user/'
+                      redirectTo: '/signup'
                   })
               }
           }).catch(error => {
@@ -56,12 +56,12 @@ class Login extends Component {
           <h5 className="grey-text text-darken-3"> Login </h5>
 
           <div className="input-feild">
-            <label htmlFor="email">USER NAME </label>
+            <label htmlFor="email">User Name </label>
             <input type="text" id="username" name="username" value={this.state.username} onChange={this.handleChange} />
           </div>
 
           <div className="input-feild">
-            <label htmlFor="password">password </label>
+            <label htmlFor="password"> Password </label>
             <input type="password" name="password" value={this.state.password} onChange={ this.handleChange } />
           </div>
 

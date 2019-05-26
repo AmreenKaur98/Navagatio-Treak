@@ -48,8 +48,8 @@ class Navbar extends Component {
                                     <span class="waves-effect"><Link to='/visitpalce'> Visited Places </Link> </span>
                                     <span class="waves-effect"><Link to='/create'> Create </Link> </span>
                                     <span class="waves-effect"><Link to='/about'> About </Link> </span>
-                                      <span class="waves-effect"><Link to="/login" >Login </Link></span>
-                                      <span class="waves-effect"> <Link to="/signup" > Sign Up  </Link> </span>
+                                      <span class="waves-effect"><Link to='/login' >Login </Link></span>
+                                      <span class="waves-effect"> <Link to='/signup' > Sign Up  </Link> </span>
                                     </section>
                                 )}
               </ul>

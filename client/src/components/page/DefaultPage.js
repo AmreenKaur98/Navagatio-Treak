@@ -7,7 +7,7 @@ class DefaultPage extends Component
   {
     return(
   <div class="col s12 m7">
-  <center> <h3 class="header blue-text text-darken-2"><b> About Travel </b> </h3> </center>
+  <center> <h3 class="header blue-text text-darken-2"><b> About Navagatio </b> </h3> </center>
     <div class="card horizontal">
       <div class="card-image">
         <img src= "img/b44c665c88d2d14d1b4a6904bd133acb.gif" />

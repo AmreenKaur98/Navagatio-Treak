@@ -59,7 +59,7 @@ render()
       <BrowserRouter>
       <div>
       <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-      {this.state.loggedIn && <h4 className="white-text"><center> Wow you join the party, {this.state.username}!</center></h4>}
+      {this.state.loggedIn && <h4 className="white-text"><center>  Welcome {this.state.username} Hope you enjoy it!</center></h4>}
        <Switch>
         <Route exact path='/' component={MainPage} />
         <Route path='/about' component={DefaultPage} />

@@ -20,12 +20,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/navagatio', { useNewUrlParser: true });
-const connection = mongoose.connection;
-connection.once('open', function() {
-    console.log("MongoDB database connection successfully");
-})
-
 // Sessions
 app.use(
 	session({
@@ -40,13 +34,19 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session()) // calls the deserializeUser
 
+const db = require('./config/keys').mongoURI;
 
+mongoose.connect('db', { useNewUrlParser: true });
+const connection = mongoose.connection;
+connection.once('open', function() {
+    console.log("MongoDB database connection successfully");
+})
 // Routes
-app.use('/user', user)
 
 const navroute = require('./routes/navroute');
 app.use('/nav',navroute);
 
+app.use('/user', user);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);

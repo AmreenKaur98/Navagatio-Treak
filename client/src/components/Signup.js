@@ -4,6 +4,7 @@ import axios from 'axios';
 class Signup extends Component {
   constructor() {
   		super()
+      this.state = {isToggleOn: true};
   		this.state = {
   			username: '',
   			password: '',
@@ -11,7 +12,14 @@ class Signup extends Component {
   		}
   		this.handleSubmit = this.handleSubmit.bind(this)
   		this.handleChange = this.handleChange.bind(this)
+      this.handleClick = this.handleClick.bind(this);
   	}
+    handleClick() {
+     this.setState(state => ({
+       isToggleOn: !state.isToggleOn
+     }));
+   }
+
   	handleChange(event) {
   		this.setState({
   			[event.target.name]: event.target.value
@@ -21,7 +29,7 @@ class Signup extends Component {
       event.preventDefault();
   		console.log('sign-up handleSubmit, username: ')
   		console.log(this.state.username)
-      
+
   		axios.post('http://localhost:4000/user/', {
   			username: this.state.username,
   			password: this.state.password}
@@ -68,7 +76,7 @@ class Signup extends Component {
           </div>
 
         <div className="input-field">
-          <button type="submit" className="btn waves-effect waves-light"> SIGN UP </button>
+          <button type="submit" onClick={this.handleClick} className="btn waves-effect waves-light">  {this.state.isToggleOn ? 'DONE' : 'SIGN UP'}   </button>
           </div>
           </form>
         </div>
